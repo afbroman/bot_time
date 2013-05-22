@@ -35,7 +35,7 @@ describe 'BotTime' do
 
   it "can return an array of Brazilian date strings" do
     bt = BotTime.new "12/28/2013", "1/5/2014"
-    br_dates = bt.strings_br
+    br_dates = bt.to_str_br
     br_dates.first.should eq "28/12/2013"
     br_dates.last.should eq "05/01/2014"
   end
@@ -43,7 +43,7 @@ describe 'BotTime' do
 
   it "can return an array of Brazilian url-safe date strings" do
     bt = BotTime.new "2/14/2013", "2/19/2013"
-    safe = bt.url_safe_br
+    safe = bt.to_safe_str_br
     safe.first.should eq "14%2F02%2F2013"
     safe.last.should eq "19%2F02%2F2013"
   end

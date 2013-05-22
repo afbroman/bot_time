@@ -24,11 +24,11 @@ class BotTime
     @dates.length
   end
 
-  def strings_br
+  def to_str_br
     @dates.map {|d| d.strftime("%d/%m/%Y")}
   end
 
-  def url_safe_br
-    strings_br.map {|d| d.gsub('/','%2F')}
+  def to_safe_str_br
+    to_str_br.map {|d| d.gsub('/','%2F')}
   end
 end
