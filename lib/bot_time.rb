@@ -28,6 +28,10 @@ class BotTime
     @dates.map {|d| d.strftime("%d/%m/%Y")}
   end
 
+  def to_str_br_und
+    @dates.map {|d| d.strftime("%d_%m_%Y")}
+  end
+
   def to_safe_str_br
     to_str_br.map {|d| d.gsub('/','%2F')}
   end

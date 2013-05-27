@@ -40,6 +40,12 @@ describe 'BotTime' do
     br_dates.last.should eq "05/01/2014"
   end
 
+  it "can return an array of Brazilian date string with underscores" do
+    bt = BotTime.new "7/1/2012", "7/3/2012"
+    br_dates = bt.to_str_br_und
+    br_dates.first.should eq "01_07_2012"
+    br_dates.last.should eq "03_07_2012"
+  end
 
   it "can return an array of Brazilian url-safe date strings" do
     bt = BotTime.new "2/14/2013", "2/19/2013"
